@@ -81,7 +81,7 @@
 
           </div> 
           <div class="col-lg-8 ps-lg-5 forstate d-none" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/img3.jpg" alt="" class="img-fluid services-img">
+            <img src="assets/img/img3.jpg" alt="" class="img-fluid services-img" style="height: 400px;width:100%;">
             <h3>Skip Tracing</h3>
             <p>
               If an individual who needs to be served with legal documents has disappeared, planning a court action can be a hard task to accomplish. It may be extremely difficult to learn where the individual is living – when a person knows they must appear in court, they may relocate to a different state (or even a different country), change their name or take other measures in an attempt to hide. Among the advantages of working with are process service agency is that we can offer professional skip tracing services. We can utilize various methods to find individuals who have disappeared in order to properly serve them with legal documents.
@@ -97,7 +97,7 @@
             </ul>
           </div> 
           <div class="col-lg-8 ps-lg-5 fortracing" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/img3.jpg" alt="" class="img-fluid services-img"> 
+            <img src="assets/img/img2.jpg" alt="" class="img-fluid services-img" style="height: 400px;width:100%;"> 
              <h3>We specialize in Government and Corporate Service of process in Albany, NY including:</h3>
             <ul>
               <li><i class="bi bi-check-circle"></i> <span>The NY Secretary of State</span></li>
@@ -171,6 +171,24 @@
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
  
   <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+  <script>
+   jQuery(document).ready(function () { 
+      $('#btntracing').on('click',function(){
+        $('.fortracing').removeClass('d-none'); 
+        $('.forstate').addClass('d-none'); 
+        $(this).addClass('active'); 
+        $('#btnstate').removeAttr('class'); 
+
+      });
+      $('#btnstate').on('click',function(){
+        $('.fortracing').addClass('d-none'); 
+        $('.forstate').removeClass('d-none'); 
+        $(this).addClass('active'); 
+        $('#btntracing').removeAttr('class');
+      });
+   });
+  </script> 
 
 </body>
 
