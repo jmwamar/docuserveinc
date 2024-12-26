@@ -32,7 +32,7 @@
         <ul>
           <li><a href="index.html#home">Home<br></a></li>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services"  class="active">Services</a></li> 
+          <li><a href="service-details.html">Services</a></li> 
           <li><a href="index.html#contact">ContactUs</a></li>
           <li><a href="login.html">Client Login</a></li>
         </ul>
@@ -65,8 +65,8 @@
             <div class="service-box">
               <h4>Serices List</h4>
               <div class="services-list">
-                <a href="#" ><i class="bi bi-arrow-right-circle"></i><span>Service of Process</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Court Filing and Document Retrieval</span></a>
+                <a id="btnprocess" ><i class="bi bi-arrow-right-circle"></i><span>Service of Process</span></a>
+                <a id="btncourt"><i class="bi bi-arrow-right-circle"></i><span>Court Filing and Document Retrieval</span></a>
                 <a id="btntracing" class="active"><i class="bi bi-arrow-right-circle"></i><span>Skip Tracing</span></a>
                 <a id="btnstate"><i class="bi bi-arrow-right-circle"></i><span>Secretary of State</span></a> 
               </div>
@@ -106,6 +106,23 @@
               <li><i class="bi bi-check-circle"></i> <span>NY State Department of Taxation & Finance</span></li>
               <li><i class="bi bi-check-circle"></i> <span>The NY State Attorney General’s Office</span></li>
               <li><i class="bi bi-check-circle"></i> <span>All Registered Agents Including Corporation Service Company</span></li>
+            </ul>
+          </div> 
+          <div class="col-lg-8 ps-lg-5 forcourt d-none" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/img1.jpg" alt="" class="img-fluid services-img" style="height: 400px;width:100%;"> 
+             <h3>Court Filing and Document Retrieval</h3>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>We provice court filing and document retrieval.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Reliable</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Fast</span></li>
+            </ul>
+          </div> 
+          <div class="col-lg-8 ps-lg-5 forprocess d-none" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/img2.jpg" alt="" class="img-fluid services-img" style="height: 400px;width:100%;"> 
+             <h3>Service of Process</h3>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Professional Process Serving</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Trusted</span></li>
             </ul>
           </div> 
         </div>
@@ -177,15 +194,44 @@
       $('#btntracing').on('click',function(){
         $('.fortracing').removeClass('d-none'); 
         $('.forstate').addClass('d-none'); 
+        $('.forcourt').addClass('d-none'); 
+        $('.forprocess').addClass('d-none'); 
+
         $(this).addClass('active'); 
-        $('#btnstate').removeAttr('class'); 
+        $('#btnstate').removeAttr('class');
+        $('#btnprocess').removeAttr('class');
+        $('#btncourt').removeAttr('class');
 
       });
       $('#btnstate').on('click',function(){
         $('.fortracing').addClass('d-none'); 
+        $('.forprocess').addClass('d-none'); 
+        $('.forcourt').addClass('d-none'); 
         $('.forstate').removeClass('d-none'); 
         $(this).addClass('active'); 
         $('#btntracing').removeAttr('class');
+        $('#btnprocess').removeAttr('class');
+        $('#btncourt').removeAttr('class');
+      });
+      $('#btncourt').on('click',function(){
+        $('.fortracing').addClass('d-none'); 
+        $('.forprocess').addClass('d-none'); 
+        $('.forcourt').removeClass('d-none'); 
+        $('.forstate').addClass('d-none'); 
+        $(this).addClass('active'); 
+        $('#btntracing').removeAttr('class');
+        $('#btnprocess').removeAttr('class');
+        $('#btnstate').removeAttr('class');
+      });
+      $('#btnprocess').on('click',function(){
+        $('.fortracing').addClass('d-none'); 
+        $('.forprocess').removeClass('d-none'); 
+        $('.forcourt').addClass('d-none'); 
+        $('.forstate').addClass('d-none'); 
+        $(this).addClass('active'); 
+        $('#btntracing').removeAttr('class');
+        $('#btncourt').removeAttr('class');
+        $('#btnstate').removeAttr('class');
       });
    });
   </script> 
